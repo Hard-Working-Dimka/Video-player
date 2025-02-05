@@ -15,14 +15,24 @@
       height: 30px;
       margin: 0px auto;
     }
+
+    .player {
+      width: 800px;
+      height: 600px;
+    }
+
+    .video-container {
+      width: 100%;
+      height: 100%;
+    }
   </style>
 
 </head>
 <body>
 
 
-<div id="player" style="width: 800px; height: 600px;">
-  <div class="js-video-container" style="width: 100%; height: 100%"></div>
+<div class="player" id="player">
+  <div class="js-video-container video-container"></div>
 
   <div style="background-color: black">
     <button class="button-player js-play-button" hidden>
