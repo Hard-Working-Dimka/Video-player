@@ -12,16 +12,33 @@
     <meta name="apple-mobile-web-app-title" content="MyWebSite"/>
     <link rel="manifest" href="./static/favicon/site.webmanifest"/>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
     <style type="text/css">
         .button-of-player {
-            border-style: none;
+            border-style: ;
             cursor: pointer;
             color: #ffffff;
             background-color: transparent;
-            height: 35px;
-            width: 35px;
-            margin: 0 1px 4px;
+            height: 30px;
+            width: 30px;
+            margin: 6px 3px 6px;
             font-size: 20px;
+        }
+
+        .time {
+            border-style: ;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: transparent;
+            height: 30px;
+            width: auto;
+            margin-left: -6px;
+            margin-right: -6px;
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         .player-box {
@@ -67,7 +84,11 @@
         <button class="button-of-player js-mute-button" hidden>
           <i class="fa fa-volume-off" aria-hidden="true"></i>
         </button>
+        <button class="time js-current-time" style="font-family:'Roboto', serif"></button>
+
+
         <div class="space-between-buttonbar-sides"></div>
+        <button class="time js-duration" style="font-family:'Roboto', serif"></button>
         <button class="button-of-player js-fullscreen-button">
           <i class="fa fa-expand" aria-hidden="true"></i>
         </button>
