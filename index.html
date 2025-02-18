@@ -17,51 +17,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
 
     <style type="text/css">
-        .button-of-player {
-            border-style: ;
-            cursor: pointer;
-            color: #ffffff;
-            background-color: transparent;
-            height: 30px;
-            width: 30px;
-            margin: 6px 3px 6px;
-            font-size: 20px;
-        }
-
-        .time {
-            border-style: ;
-            cursor: pointer;
-            color: #ffffff;
-            background-color: transparent;
-            height: 30px;
-            width: auto;
-            margin-left: -6px;
-            margin-right: -6px;
-            margin-top: 5px;
-            font-size: 16px;
-        }
-
         .player-box {
             display: flex;
             flex-direction: column;
             width: 800px;
             height: 600px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8)
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: row;
-            background-color: #000000;
-            flex-grow: 0;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            flex-grow: 1;
         }
 
         .video-container {
             flex-grow: 1;
         }
 
-        .space-between-buttonbar-sides {
+        .buttons-container {
+            display: flex;
+            flex-direction: row;
+            background-color: #000000;
+        }
+
+        .button-of-player {
+            border-style: none;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            font-size: 20px;
+        }
+
+        .time {
+            border-style: none;
+            color: #ffffff;
+            background-color: transparent;
+            height: 30px;
+            width: auto;
+            font-size: 16px;
+            margin-top: 1px;
+            margin-left: 1px;
+            margin-right: -3px;
+        }
+
+        .viewing-progressbar {
+            display: flex;
             flex-grow: 1;
+        }
+
+        .left-buttons {
+            flex-grow: 0;
+            margin-left: 5px;
+            margin-top: 1px;
+            margin-right: -1px;
+        }
+
+        .right-buttons {
+            flex-grow: 0;
+            margin-right: 4px;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            border-radius: 100px;
+            height: 5px;
+            margin-top: 14px;
+            flex-grow: 1;
+            margin-left: 8px;
+            margin-right: 4px;
+            display: flex;
+        }
+
+        .moving_bar {
+            border-radius: 100px;
+            height: 5px;
+            margin-bottom: 4px;
+            margin-left: 0;
+            margin-right: 4px;
+            flex-grow: 0;
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: red;
+            border-radius: 50%;
+
+            border-style: solid;
+            border-width: 3px;
+            border-color: white;
+            flex-grow: 0;
+            margin-top: -4px;
+            margin-left: -5px;
+            box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.8);
         }
     </style>
   </head>
@@ -72,26 +118,39 @@
       <div class="js-video-container video-container"></div>
 
       <div class="buttons-container">
-        <button class="button-of-player js-play-button" hidden>
-          <i class="fa fa-play" aria-hidden="true"></i>
-        </button>
-        <button class="button-of-player js-pause-button" hidden>
-          <i class="fa fa-pause" aria-hidden="true"></i>
-        </button>
-        <button class="button-of-player js-volume-button" hidden>
-          <i class="fa fa-volume-up" aria-hidden="true"></i>
-        </button>
-        <button class="button-of-player js-mute-button" hidden>
-          <i class="fa fa-volume-off" aria-hidden="true"></i>
-        </button>
-        <button class="time js-current-time" style="font-family:'Roboto', serif"></button>
 
+        <div class="left-buttons">
+          <button class="button-of-player js-play-button" hidden>
+            <i class="fa fa-play" aria-hidden="true"></i>
+          </button>
+          <button class="button-of-player js-pause-button" hidden>
+            <i class="fa fa-pause" aria-hidden="true"></i>
+          </button>
+          <button class="button-of-player js-volume-button" hidden>
+            <i class="fa fa-volume-up" aria-hidden="true"></i>
+          </button>
+          <button class="button-of-player js-mute-button" hidden>
+            <i class="fa fa-volume-off" aria-hidden="true"></i>
+          </button>
+        </div>
 
-        <div class="space-between-buttonbar-sides"></div>
-        <button class="time js-duration" style="font-family:'Roboto', serif"></button>
-        <button class="button-of-player js-fullscreen-button">
-          <i class="fa fa-expand" aria-hidden="true"></i>
-        </button>
+        <div class="viewing-progressbar">
+          <button class="time js-current-time" style="font-family:'Roboto', serif"></button>
+
+          <div class="js-progress progress-bar">
+            <div class="js-progress-slider moving_bar" style="background-color: red;"></div>
+            <span class="dot"></span>
+          </div>
+
+          <button class="time js-duration" style="font-family:'Roboto', serif"></button>
+        </div>
+
+        <div class="right-buttons">
+          <button class="button-of-player js-fullscreen-button">
+            <i class="fa fa-expand" aria-hidden="true"></i>
+          </button>
+        </div>
+
       </div>
     </div>
 
