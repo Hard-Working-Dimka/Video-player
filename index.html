@@ -16,8 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="./static/normalize.css">
+
     <style type="text/css">
-        .player-box {
+        .player-container {
+            margin-top: 8px;
+            margin-left: 8px;
             display: flex;
             flex-direction: column;
             width: 800px;
@@ -46,7 +50,7 @@
             font-size: 20px;
         }
 
-        .time {
+        .button-of-time {
             border-style: none;
             color: #ffffff;
             background-color: transparent;
@@ -58,7 +62,7 @@
             margin-right: -3px;
         }
 
-        .viewing-progressbar {
+        .progressbar-container {
             display: flex;
             flex-grow: 1;
         }
@@ -76,7 +80,7 @@
             margin-bottom: 8px;
         }
 
-        .progress-bar {
+        .progressbar {
             border-radius: 100px;
             height: 5px;
             margin-top: 14px;
@@ -86,7 +90,7 @@
             display: flex;
         }
 
-        .moving_bar {
+        .movable_progressbar {
             border-radius: 100px;
             height: 5px;
             margin-bottom: 4px;
@@ -114,7 +118,7 @@
             transition-timing-function: ease-in-out;
         }
 
-        .progress-bar:hover .dot {
+        .progressbar:hover .dot {
             opacity: 1;
         }
     </style>
@@ -122,7 +126,7 @@
   <body>
 
 
-    <div class="player-box" id="player">
+    <div class="player-container" id="player">
       <div class="js-video-container video-container"></div>
 
       <div class="buttons-container">
@@ -142,15 +146,15 @@
           </button>
         </div>
 
-        <div class="viewing-progressbar">
-          <button class="time js-current-time" style="font-family:'Roboto', serif"></button>
+        <div class="progressbar-container">
+          <button class="button-of-time js-current-time" style="font-family:'Roboto', serif"></button>
 
-          <div class="js-progress progress-bar">
-            <div class="js-progress-slider moving_bar" style="background-color: red;"></div>
+          <div class="js-progress progressbar">
+            <div class="js-progress-slider movable_progressbar" style="background-color: red;"></div>
             <span class="dot"></span>
           </div>
 
-          <button class="time js-duration" style="font-family:'Roboto', serif"></button>
+          <button class="button-of-time js-duration" style="font-family:'Roboto', serif"></button>
         </div>
 
         <div class="right-buttons">
